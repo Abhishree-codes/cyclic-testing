@@ -7,7 +7,7 @@ const { authMiddleware } = require("../middlewares/auth.middleware")
 const notesRouter = express.Router()
 
 //read
-notesRouter.get("/", async (req,res)=>{
+notesRouter.get("/",authMiddleware, async (req,res)=>{
     try {
         const notes = await NotesModel.find({"userID":req.body.userID})
         res.send(notes)

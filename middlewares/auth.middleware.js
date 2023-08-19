@@ -26,7 +26,7 @@ const authMiddleware = async (req,res,next)=>{
                }else if(decoded){
                 req.body.userID=decoded.userID
                 req.body.username=decoded.username
-
+                console.log("decoded is working")
                  next()
                }
               });
