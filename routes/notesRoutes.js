@@ -6,6 +6,11 @@ const { authMiddleware } = require("../middlewares/auth.middleware")
 
 const notesRouter = express.Router()
 
+app.use(cors({
+    origin:"http://localhost:3000",
+    credentials:true
+}))
+
 //read
 notesRouter.get("/",authMiddleware, async (req,res)=>{
     try {

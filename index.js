@@ -12,8 +12,7 @@ const { notesRouter } = require("./routes/notesRoutes")
 app.use(express.json())
 app.use(cors({
     origin:"http://localhost:3000",
-    credentials:true,
-    exposedHeaders: ['X-Custom-Header']
+    credentials:true
 }))
 app.use(cookieParser())
 app.use("/notes",notesRouter)
