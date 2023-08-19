@@ -51,7 +51,7 @@ userRouter.post("/login",loginMiddleware, async (req,res)=>{
 })
 
 userRouter.get("/logout",async (req,res)=>{
-    const token = req.cookies.token
+    const token = req.headers?.authorization?.split(" ")[1]
     try {
         const tokenToAdd= new BlacklistModel({"ex_token":token})
         await tokenToAdd.save()

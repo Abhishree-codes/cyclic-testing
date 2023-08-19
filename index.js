@@ -23,7 +23,7 @@ app.get("/",(req,res)=>{
 })
 
 app.get("/regentoken",(req,res)=>{
-    const rtoken = req.cookies.rtoken
+    const rtoken = req.headers?.authorization?.split(" ")[1]
     jwt.verify(rtoken, 'school', (err, decoded)=> {
         if(err){
             if(err.expiredAt){
