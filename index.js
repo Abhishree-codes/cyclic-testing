@@ -11,7 +11,7 @@ const { notesRouter } = require("./routes/notesRoutes")
 //status codes
 app.use(express.json())
 app.use(cors(
-   { origin: "http://localhost:3000"
+   { origin: "*"
 }
 ))
 app.options("*", cors());
