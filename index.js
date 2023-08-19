@@ -16,8 +16,11 @@ app.use(cors({
     exposedHeaders: ['X-Custom-Header']
 }))
 app.use(cookieParser())
-app.use("/users",userRouter)
 app.use("/notes",notesRouter)
+app.use("/users",userRouter)
+
+
+
 app.get("/",(req,res)=>{
     res.send("home page")
 })
