@@ -4,8 +4,8 @@ const jwt= require("jsonwebtoken")
 
 const authMiddleware = async (req,res,next)=>{
     //get token 
-    const token = req.cookies?.token
-
+    //const token = req.cookies?.token
+    const token = req.headers?.authorization?.split(" ")[1]
     //check blacklist 
     try {
         if(!token){
