@@ -11,6 +11,7 @@ const { notesRouter } = require("./routes/notesRoutes")
 //status codes
 app.use(express.json())
 app.use(cors())
+app.options("*", cors());
 app.use("/notes",notesRouter)
 app.use("/users",userRouter)
 
