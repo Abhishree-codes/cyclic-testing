@@ -12,7 +12,7 @@ notesRouter.get("/", async (req,res)=>{
         const notes = await NotesModel.find({"userID":req.body.userID})
         res.send(notes)
     } catch (error) {
-        res.status(500).send({"error":"internal server error"})
+        res.status(400).send({"error":"xyz"})
     }
 })
 
