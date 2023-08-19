@@ -8,7 +8,8 @@ loginMiddleware= async (req,res,next)=>{
     if(email){
         bcrypt.compare(password, user.password, (err, result)=> {
             if(err){
-                res.status(500).send({"error":"internal server error"})
+                res.send(error)
+                //res.status(500).send({"error":"internal server error"})
             }else if(!result){
                 res.status(401).send({"error":"invalid credentials"})
             }else if(result){
@@ -19,7 +20,8 @@ loginMiddleware= async (req,res,next)=>{
         res.status(401).send({"error":"user does not exist"})
     }
    } catch (error) {
-    res.status(500).send({"error":"internal server error"})
+    res.send(error)
+    //res.status(500).send({"error":"internal server error"})
    }
 }
 
