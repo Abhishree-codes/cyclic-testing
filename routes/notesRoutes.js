@@ -7,13 +7,6 @@ const { authMiddleware } = require("../middlewares/auth.middleware")
 const notesRouter = express.Router()
 
 //read
-app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000"); // Replace with your frontend origin
-    res.setHeader("Access-Control-Allow-Credentials", "true");
-    // Other headers setup
-    next();
-  });
-  
 notesRouter.get("/",authMiddleware, async (req,res)=>{
     try {
         const notes = await NotesModel.find({"userID":req.body.userID})
