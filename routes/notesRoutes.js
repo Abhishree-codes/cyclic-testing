@@ -8,7 +8,8 @@ const notesRouter = express.Router()
 
 app.use(cors({
     origin:"http://localhost:3000",
-    credentials:true
+    credentials:true,
+    exposedHeaders: ['X-Custom-Header', 'Access-Control-Allow-Origin']
 }))
 
 //read
